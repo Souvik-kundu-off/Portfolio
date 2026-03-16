@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5.1%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 9%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 9%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 22 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 13.3%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 13.3%;
+    --muted-foreground: 0 0% 33.3%;
+
+    --accent: 50 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 340 100% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 16.5%;
+    --input: 0 0% 16.5%;
+    --ring: 22 100% 50%;
+
+    --radius: 4px;
+
+    /* Custom tokens */
+    --bg-base: #0D0D0D;
+    --bg-surface: #171717;
+    --bg-elevated: #222222;
+    --accent-orange: #FF5C00;
+    --accent-yellow: #FFD600;
+    --accent-magenta: #E8005A;
+    --text-primary: #FFFFFF;
+    --text-secondary: #AAAAAA;
+    --text-muted: #555555;
+    --color-border: #2A2A2A;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+  }
+
+  ::selection {
+    background-color: var(--accent-orange);
+    color: var(--bg-base);
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    background: linear-gradient(135deg, #FF5C00 0%, #E8005A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 24px rgba(255, 92, 0, 0.25);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 24px rgba(255, 214, 0, 0.25);
+  }
+
+  .glow-magenta {
+    box-shadow: 0 0 24px rgba(232, 0, 90, 0.25);
+  }
+
+  .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+  }
+
+  .section-spacing {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+
+  @media (max-width: 768px) {
+    .section-spacing {
+      padding-top: 96px;
+      padding-bottom: 96px;
+    }
+  }
+
+  .max-measure {
+    max-width: 65ch;
+  }
+}
+
+@layer base {
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
