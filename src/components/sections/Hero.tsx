@@ -14,7 +14,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 overflow-hidden">
       {/* Radial glow */}
       <div
         className="absolute inset-0 pointer-events-none"

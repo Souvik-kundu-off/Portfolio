@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 import BootScreen from "@/components/boot/BootScreen";
 import NavBar from "@/components/nav/NavBar";
@@ -11,13 +11,18 @@ import Contact from "@/components/sections/Contact";
 import Footer from "@/components/sections/Footer";
 
 const Index = () => {
-  const [booted, setBooted] = useState(() => {
-    return sessionStorage.getItem("sk_booted") === "true";
-  });
+  const [booted, setBooted] = useState(false);
 
   const handleBootComplete = useCallback(() => {
-    sessionStorage.setItem("sk_booted", "true");
     setBooted(true);
+    // Ensure opens directly at Hero (top) after boot, no scroll/jump
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      // Clear any hash that might jump to #contact
+      if (location.hash === '#contact') {
+        history.replaceState(null, null, location.pathname + location.search);
+      }
+    });
   }, []);
 
   return (
