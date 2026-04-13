@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Github, Linkedin, Twitter } from "lucide-react";
+import { motion } from "framer-motion";
+import { RevealText } from "@/components/effects/RevealText";
 
 interface LogEntry {
   type: "sys" | "user" | "success";
@@ -53,32 +55,52 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-32 md:py-40 max-w-[1280px] mx-auto px-6 md:px-10">
-      <p className="section-watermark mb-4">Communication Terminal</p>
-      <h2 className="section-heading text-4xl md:text-6xl mb-16">Establish Uplink.</h2>
+      <motion.p
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        className="section-watermark mb-4"
+      >
+        Communication Terminal
+      </motion.p>
+      <RevealText>
+        <h2 className="section-heading text-4xl md:text-6xl mb-16">
+          Establish Uplink.
+        </h2>
+      </RevealText>
 
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-12 items-start">
         {/* Terminal */}
-        <div className="card-surface overflow-hidden" style={{ borderRadius: "8px" }}>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="glass-card overflow-hidden relative scanlines animate-pulse-glow"
+          style={{ borderRadius: "16px" }}
+        >
           {/* Header bar */}
           <div
-            className="flex items-center justify-between px-4 py-2.5"
-            style={{ background: "var(--bg-elevated)", borderBottom: "1px solid var(--border-color)" }}
+            className="flex items-center justify-between px-5 py-3"
+            style={{ background: "rgba(18, 18, 28, 0.8)", borderBottom: "1px solid var(--border-color)" }}
           >
             <span className="mono-text text-[11px]" style={{ color: "var(--text-secondary)" }}>
               root@portfolio — secure_uplink
             </span>
-            <div className="flex gap-1.5">
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(239, 68, 68, 0.2)" }} />
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(245, 158, 11, 0.2)" }} />
-              <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(34, 197, 94, 0.2)" }} />
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full" style={{ background: "rgba(239, 68, 68, 0.4)" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "rgba(245, 158, 11, 0.4)" }} />
+              <div className="w-3 h-3 rounded-full" style={{ background: "rgba(34, 197, 94, 0.4)" }} />
             </div>
           </div>
 
           {/* Log area */}
-          <div ref={logRef} className="p-6 h-[360px] overflow-y-auto space-y-2 mono-text text-sm" aria-live="polite">
+          <div ref={logRef} className="p-6 h-[360px] overflow-y-auto space-y-2 mono-text text-sm relative z-20" aria-live="polite">
             {logs.map((log, i) => (
-              <div
+              <motion.div
                 key={i}
+                initial={{ opacity: 0, x: -10 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.2 }}
                 style={{
                   color:
                     log.type === "sys"
@@ -89,7 +111,7 @@ const Contact = () => {
                 }}
               >
                 {log.text}
-              </div>
+              </motion.div>
             ))}
 
             {!done && step < questions.length && (
@@ -104,52 +126,89 @@ const Contact = () => {
                   style={{ color: "var(--text-primary)" }}
                   autoFocus
                 />
+                <span className="terminal-cursor" />
               </div>
             )}
           </div>
 
           {/* Status bar */}
           <div
-            className="px-4 py-2 flex gap-6 mono-text text-[10px]"
-            style={{ background: "var(--bg-elevated)", borderTop: "1px solid var(--border-color)", color: "var(--text-muted)" }}
+            className="px-5 py-2.5 flex gap-6 mono-text text-[10px] relative z-20"
+            style={{ background: "rgba(18, 18, 28, 0.8)", borderTop: "1px solid var(--border-color)", color: "var(--text-muted)" }}
           >
             <span>IP.ADDR 192.168.1.42</span>
             <span>ENCR AES-256-GCM</span>
-            <span>STATUS ENCRYPTED_UPLINK_ACTIVE</span>
+            <span className="hidden sm:inline">STATUS ENCRYPTED_UPLINK_ACTIVE</span>
           </div>
-        </div>
+        </motion.div>
 
         {/* Social + CTA */}
-        <div className="space-y-8">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="space-y-8"
+        >
           <div>
-            <h3 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-2">
+            <h3 className="font-display text-3xl md:text-4xl font-bold leading-tight mb-2 gradient-text">
               LET'S<br />BUILD.
             </h3>
-            <p className="text-sm" style={{ color: "var(--text-secondary)" }}>
+            <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
               Have a project in mind? Let's make something extraordinary together.
             </p>
           </div>
 
-          <div className="flex gap-4">
-            {[
-              { icon: Github, href: "#", label: "GitHub" },
-              { icon: Linkedin, href: "#", label: "LinkedIn" },
-              { icon: Twitter, href: "#", label: "Twitter" },
-            ].map(({ icon: Icon, href, label }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="w-11 h-11 flex items-center justify-center card-surface transition-colors hover:border-[var(--accent-primary)]"
-                style={{ borderRadius: "4px" }}
-              >
-                <Icon size={18} style={{ color: "var(--text-secondary)" }} />
-              </a>
-            ))}
+          <div>
+            <p className="mono-text text-[10px] mb-3" style={{ color: "var(--text-muted)" }}>
+              Connect
+            </p>
+            <div className="flex gap-3">
+              {[
+                { icon: Github, href: "#", label: "GitHub" },
+                { icon: Linkedin, href: "#", label: "LinkedIn" },
+                { icon: Twitter, href: "#", label: "Twitter" },
+              ].map(({ icon: Icon, href, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  className="group relative"
+                >
+                  <div
+                    className="w-12 h-12 flex items-center justify-center glass-card transition-all duration-300 group-hover:border-[var(--accent-primary)]"
+                    style={{ borderRadius: "12px" }}
+                  >
+                    <Icon size={18} style={{ color: "var(--text-secondary)" }} className="transition-colors group-hover:text-[var(--accent-secondary)]" />
+                  </div>
+                  {/* Tooltip */}
+                  <span
+                    className="absolute -top-8 left-1/2 -translate-x-1/2 mono-text text-[10px] px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
+                    style={{
+                      background: "var(--bg-elevated)",
+                      color: "var(--text-secondary)",
+                      border: "1px solid var(--border-color)",
+                    }}
+                  >
+                    {label}
+                  </span>
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
+
+          {/* Email */}
+          <div className="glass-card p-4">
+            <p className="mono-text text-[10px] mb-1" style={{ color: "var(--text-muted)" }}>
+              Email
+            </p>
+            <p className="mono-text text-sm" style={{ color: "var(--accent-secondary)" }}>
+              hello@souvikkundu.dev
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

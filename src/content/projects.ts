@@ -8,6 +8,8 @@ export interface ProjectData {
   live?: string;
   domain: "Design" | "Frontend" | "AI";
   featured: boolean;
+  image: string;
+  accentColor: string;
 }
 
 export const projects: ProjectData[] = [
@@ -21,6 +23,8 @@ export const projects: ProjectData[] = [
     live: "#",
     domain: "AI",
     featured: true,
+    image: "/project-neuralvision.png",
+    accentColor: "var(--domain-ai)",
   },
   {
     id: "Node_02",
@@ -32,6 +36,8 @@ export const projects: ProjectData[] = [
     live: "#",
     domain: "Design",
     featured: true,
+    image: "/project-spectrumui.png",
+    accentColor: "var(--domain-design)",
   },
   {
     id: "Node_03",
@@ -43,6 +49,8 @@ export const projects: ProjectData[] = [
     live: "#",
     domain: "Frontend",
     featured: true,
+    image: "/project-dataflow.png",
+    accentColor: "var(--domain-frontend)",
   },
   {
     id: "Node_04",
@@ -53,5 +61,7 @@ export const projects: ProjectData[] = [
     github: "#",
     domain: "AI",
     featured: true,
+    image: "/project-sentimentlens.png",
+    accentColor: "var(--domain-ai)",
   },
 ];
