@@ -190,7 +190,7 @@ const Hero = () => {
           </button>
 
           <a
-            href="/cv.pdf"
+            href="/Souvik%20kundu%20Resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-6 py-3 rounded-xl font-display text-sm font-semibold transition-all duration-300 glass-card"

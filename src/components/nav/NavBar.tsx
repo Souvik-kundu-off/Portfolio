@@ -103,7 +103,7 @@ const NavBar = () => {
               );
             })}
             <a
-              href="/cv.pdf"
+              href="/Souvik%20kundu%20Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mono-text text-xs px-4 py-2 transition-all duration-300 rounded-lg"
