@@ -3,10 +3,10 @@ import { useRef, useEffect, useState } from "react";
 import { RevealText } from "@/components/effects/RevealText";
 
 const metrics = [
-  { value: 14, suffix: "+", label: "Projects", sub: "Shipped" },
-  { value: 2, suffix: "+", label: "ML Models", sub: "Trained & Deployed" },
-  { value: 3, suffix: "+", label: "UI/UX Designs", sub: "Figma Prototypes" },
-  { value: 10, suffix: "+", label: "Events", sub: "Organized" },
+  { value: 21, suffix: "+", label: "Projects", sub: "Shipped" },
+  { value: 7, suffix: "+", label: "ML Models", sub: "Trained & Deployed" },
+  { value: 11, suffix: "+", label: "UI/UX Designs", sub: "Figma Prototypes" },
+  { value: 8, suffix: "+", label: "Events", sub: "Organized" },
 ];
 
 const coursework = [
