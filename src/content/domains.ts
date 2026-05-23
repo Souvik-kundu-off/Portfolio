@@ -1,4 +1,4 @@
-export interface AIDomain {
+export interface ExpertiseDomain {
   id: string;
   shorthand: string;
   name: string;
@@ -7,45 +7,45 @@ export interface AIDomain {
   projectCount: number;
 }
 
-export const domains: AIDomain[] = [
+export const domains: ExpertiseDomain[] = [
   {
-    id: "cv",
-    shorthand: "CV",
-    name: "Computer Vision",
-    focus: "Neural architectures for spatial understanding, object detection, and image segmentation. Building systems that see and interpret the visual world with precision.",
-    tools: ["OpenCV", "PyTorch", "TensorFlow", "YOLO", "MediaPipe"],
-    projectCount: 4,
-  },
-  {
-    id: "nlp",
-    shorthand: "NLP",
-    name: "NLP / LLMs",
-    focus: "Fine-tuning transformer models for context-aware reasoning and natural language understanding. Building conversational AI and text analysis pipelines.",
-    tools: ["HuggingFace", "LangChain", "OpenAI", "Anthropic", "spaCy"],
-    projectCount: 3,
-  },
-  {
-    id: "gen",
-    shorthand: "Gen",
-    name: "Generative AI",
-    focus: "Exploring the frontier of creative AI — from image generation to code synthesis. Building tools that augment human creativity with machine intelligence.",
-    tools: ["Diffusers", "Stable Diffusion", "ComfyUI", "LoRA", "DALL-E"],
+    id: "fe",
+    shorthand: "FE",
+    name: "Frontend Engineering",
+    focus: "Architecting performant, responsive web applications with modern frameworks. From interactive event platforms to full-stack community hubs — engineering experiences that are fast, accessible, and alive.",
+    tools: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Framer Motion"],
     projectCount: 2,
   },
   {
-    id: "rl",
-    shorthand: "RL",
-    name: "Reinforcement Learning",
-    focus: "Designing reward functions and training agents that learn optimal strategies through interaction. Solving sequential decision-making problems.",
-    tools: ["Gym", "Stable Baselines3", "Ray RLlib", "Unity ML-Agents"],
+    id: "ux",
+    shorthand: "UX",
+    name: "UI/UX Design",
+    focus: "Designing pixel-perfect interfaces that balance aesthetics with usability. From NFT marketplaces to smart resume builders — every design decision is grounded in empathy and interaction logic.",
+    tools: ["Figma", "Adobe XD", "Prototyping", "Design Systems", "Spline"],
+    projectCount: 3,
+  },
+  {
+    id: "pa",
+    shorthand: "PA",
+    name: "Predictive Analytics",
+    focus: "Building machine learning models that predict outcomes from complex real-world data. Traffic arrival times, route safety scores — turning raw data into actionable intelligence.",
+    tools: ["Python", "scikit-learn", "Pandas", "NumPy", "Matplotlib"],
     projectCount: 2,
   },
   {
-    id: "ops",
-    shorthand: "Ops",
-    name: "ML Ops",
-    focus: "Building robust pipelines for model training, versioning, deployment, and monitoring. Ensuring ML systems are reproducible and production-ready.",
-    tools: ["MLflow", "Weights & Biases", "Docker", "FastAPI", "GitHub Actions"],
-    projectCount: 3,
+    id: "ds",
+    shorthand: "DS",
+    name: "Data Science",
+    focus: "Cleaning, exploring, and visualizing datasets to uncover hidden patterns. Feature engineering, statistical analysis, and data storytelling that drives model performance.",
+    tools: ["Jupyter Notebook", "Seaborn", "Matplotlib", "Pandas", "NumPy"],
+    projectCount: 2,
+  },
+  {
+    id: "fs",
+    shorthand: "FS",
+    name: "Full-Stack Development",
+    focus: "Designing complete application architectures from database to deployment. Authentication, real-time data, row-level security, and serverless backends — building systems that scale.",
+    tools: ["Supabase", "PostgreSQL", "TanStack Query", "Vercel", "REST APIs"],
+    projectCount: 2,
   },
 ];

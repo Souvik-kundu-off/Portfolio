@@ -1,5 +1,5 @@
 import { projects } from "@/content/projects";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { ExternalLink, Github, Star, Figma } from "lucide-react";
 import { RevealText } from "@/components/effects/RevealText";
 import { motion } from "framer-motion";
 
@@ -133,6 +133,19 @@ const Projects = () => {
                   >
                     <ExternalLink size={14} />
                     Demo
+                    <span className="w-0 group-hover/link:w-4 transition-all duration-300 overflow-hidden">→</span>
+                  </a>
+                )}
+                {project.figma && (
+                  <a
+                    href={project.figma}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 mono-text text-xs transition-all duration-300 hover:text-[var(--accent-secondary)] group/link"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    <Figma size={14} />
+                    Figma
                     <span className="w-0 group-hover/link:w-4 transition-all duration-300 overflow-hidden">→</span>
                   </a>
                 )}

@@ -165,7 +165,7 @@ const Contact = () => {
             </p>
             <div className="flex gap-3">
               {[
-                { icon: Github, href: "#", label: "GitHub" },
+                { icon: Github, href: "https://github.com/Souvik-kundu-off", label: "GitHub" },
                 { icon: Linkedin, href: "#", label: "LinkedIn" },
                 { icon: Twitter, href: "#", label: "Twitter" },
               ].map(({ icon: Icon, href, label }) => (
@@ -205,7 +205,7 @@ const Contact = () => {
               Email
             </p>
             <p className="mono-text text-sm" style={{ color: "var(--accent-secondary)" }}>
-              hello@souvikkundu.dev
+              souvikkundu7718@gmail.com
             </p>
           </div>
         </motion.div>

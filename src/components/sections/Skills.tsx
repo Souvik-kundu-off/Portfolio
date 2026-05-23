@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import { skills } from "@/content/skills";
-import { Palette, Code, Brain, Layers, Terminal } from "lucide-react";
+import { Palette, Code, Brain, Database, Terminal } from "lucide-react";
 import { RevealText } from "@/components/effects/RevealText";
 
 const iconMap: Record<string, React.ReactNode> = {
   Module_01: <Palette size={24} />,
   Module_02: <Code size={24} />,
   Module_03: <Brain size={24} />,
-  Module_04: <Layers size={24} />,
+  Module_04: <Database size={24} />,
   Module_05: <Terminal size={24} />,
 };
 

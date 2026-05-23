@@ -14,11 +14,11 @@ const DomainExplorer = () => {
         viewport={{ once: true }}
         className="section-watermark mb-4"
       >
-        Intelligence Matrix v1.0
+        Expertise Matrix
       </motion.p>
       <RevealText>
         <h2 className="section-heading text-4xl md:text-6xl mb-16">
-          AI/ML Domains.
+          Domains of Expertise.
         </h2>
       </RevealText>
 
@@ -122,7 +122,7 @@ const DomainExplorer = () => {
                     <motion.div
                       className="h-full rounded-full"
                       initial={{ width: 0 }}
-                      animate={{ width: `${(active.projectCount / 5) * 100}%` }}
+                      animate={{ width: `${(active.projectCount / 3) * 100}%` }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                       style={{
                         background: "linear-gradient(90deg, var(--accent-primary), var(--accent-tertiary))",

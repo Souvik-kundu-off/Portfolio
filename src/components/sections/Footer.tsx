@@ -44,7 +44,7 @@ const Footer = () => {
         <div className="flex items-center gap-6">
           <div className="flex gap-4">
             {[
-              { icon: Github, href: "#", label: "GitHub" },
+              { icon: Github, href: "https://github.com/Souvik-kundu-off", label: "GitHub" },
               { icon: Linkedin, href: "#", label: "LinkedIn" },
               { icon: Twitter, href: "#", label: "Twitter" },
             ].map(({ icon: Icon, href, label }) => (

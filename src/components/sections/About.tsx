@@ -3,9 +3,9 @@ import { useRef, useEffect, useState } from "react";
 import { RevealText } from "@/components/effects/RevealText";
 
 const metrics = [
-  { value: 15, suffix: "+", label: "Projects", sub: "Shipped" },
-  { value: 8, suffix: "+", label: "AI/ML Models", sub: "Trained & Deployed" },
-  { value: 5, suffix: "+", label: "Design Systems", sub: "Component Libraries" },
+  { value: 14, suffix: "+", label: "Projects", sub: "Shipped" },
+  { value: 2, suffix: "+", label: "ML Models", sub: "Trained & Deployed" },
+  { value: 3, suffix: "+", label: "UI/UX Designs", sub: "Figma Prototypes" },
   { value: 10, suffix: "+", label: "Events", sub: "Organized" },
 ];
 
@@ -129,7 +129,7 @@ const About = () => {
               UI/UX Designer · Frontend Dev · AI/ML Developer
             </p>
             <p className="mono-text text-xs mt-2" style={{ color: "var(--text-muted)" }}>
-              B.Tech CSE · NSHM Knowledge Campus · Kolkata, India
+              B.Tech CSE · Brainware University · Kolkata, India
             </p>
           </motion.div>
 
